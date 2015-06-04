@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+       <context:component-scan base-package="webserver"/>
+
+        <!-- Use declarative transactions on the services -->
+        <tx:annotation-driven/>
+
+        <!-- Look up for DataSource in the container -->
+        <jee:jndi-lookup jndi-name="java:jboss/datasources/PostgresDS"
+                         id="dataSource"
+                         expected-type="javax.sql.DataSource"/>
+
+        <!-- Look up for EntityManager in the container  -->
+        <jee:jndi-lookup jndi-name="java:comp/env/EntityManager"
+                         id="entityManager"
+                         expected-type="javax.persistence.EntityManager"/>
+
+        <!-- Look up for UserTransaction in the container  -->
+        <jee:jndi-lookup jndi-name="java:jboss/UserTransaction"
+                         id="userTransaction"
+                         expected-type="javax.transaction.UserTransaction"/>
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="meteoserver.controllers.ServerConsoleController">
+   <children>
+      <Label layoutX="16.0" layoutY="325.0" text="Password :" />
+      <PasswordField fx:id="passwordTextField" layoutX="92.0" layoutY="317.0" prefHeight="31.0" prefWidth="243.0" />
+      <Label layoutX="16.0" layoutY="283.0" text="User :" />
+      <TextField fx:id="userNameTextField" layoutX="63.0" layoutY="278.0" prefHeight="31.0" prefWidth="272.0" />
+      <TextField fx:id="dataBaseURLTextField" layoutX="63.0" layoutY="240.0" prefHeight="31.0" prefWidth="272.0" />
+      <Label layoutX="16.0" layoutY="245.0" text="URL :" />
+      <Label layoutX="124.0" layoutY="211.0" text="Database settings :" />
+      <Label layoutX="89.0" layoutY="14.0" text="Arduino connection settings :" />
+      <Label fx:id="comLabel1" layoutX="36.0" layoutY="91.0" text="Baud rate :" />
+      <ComboBox fx:id="baudRateComboBox" layoutX="116.0" layoutY="87.0" prefHeight="31.0" prefWidth="220.0" />
+      <Button fx:id="stopServerButton" layoutX="221.0" layoutY="360.0" mnemonicParsing="false" text="Stop" />
+      <Button fx:id="startServerButton" layoutX="160.0" layoutY="360.0" mnemonicParsing="false" text="Start" />
+      <ComboBox fx:id="comComboBox" layoutX="116.0" layoutY="46.0" prefHeight="31.0" prefWidth="220.0" />
+      <Label fx:id="comLabel" layoutX="14.0" layoutY="50.0" text="Arduino COM :" />
+      <Separator layoutX="345.0" layoutY="10.0" orientation="VERTICAL" prefHeight="380.0" prefWidth="0.0" />
+      <Button fx:id="connectionTestButton" layoutX="9.0" layoutY="360.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="141.0" text="Test connection" />
+      <TextArea fx:id="loggingTextArea" layoutX="358.0" layoutY="10.0" prefHeight="380.0" prefWidth="458.0" />
+      <Separator layoutX="6.0" layoutY="171.0" prefHeight="2.0" prefWidth="331.0" />
+      <Button fx:id="clearLoggingAreaButton" layoutX="282.0" layoutY="359.0" mnemonicParsing="false" text="Clear" />
+   </children>
+</AnchorPane>
